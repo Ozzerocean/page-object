@@ -13,6 +13,10 @@ describe("Adding an item to the bag", () => {
     await this.driver.manage().window().maximize();
   });
 
+  afterEach(async function () {
+    await this.driver.quit();
+  });
+
   it("Choose Quantity of the product lower then 1", async function () {
     const productPage = new ProductPage(this.driver);
     await productPage.openPage(pageUrl);
@@ -55,8 +59,4 @@ describe("Adding an item to the bag", () => {
     const element = await productPage.getNumberElements();
     assert.isTrue(element.includes("5"));
   }).timeout(20000);
-
-  afterEach(async function () {
-    await this.driver.quit();
-  });
 });

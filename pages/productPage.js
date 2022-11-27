@@ -1,5 +1,5 @@
 const BasePage = require("./basePage");
-const { Key, TouchSequence } = require("selenium-webdriver");
+const { Key } = require("selenium-webdriver");
 
 class ProductPage extends BasePage {
   constructor(driver) {
