@@ -21,7 +21,6 @@ describe("Search any product", () => {
     const searchPage = new SearchPage(this.driver);
     await searchPage.openPage(pageUrl);
     await searchPage.confirmAge();
-    await searchPage.closePopup();
     await searchPage.clickSearchButton();
     await searchPage.enterNameOfTheProductToSearch("askdkskdaaksdkakdk");
     assert.isTrue(await searchPage.checkNoResults() == "Sorry, no result");
@@ -31,7 +30,6 @@ describe("Search any product", () => {
     const searchPage = new SearchPage(this.driver);
     await searchPage.openPage(pageUrl);
     await searchPage.confirmAge();
-    await searchPage.closePopup();
     await searchPage.clickSearchButton();
     await searchPage.enterNameOfTheProductToSearch("Cigarettes");
     assert.isTrue(await searchPage.checkNumberResults() > 0);
